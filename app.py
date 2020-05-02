@@ -34,10 +34,11 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     get_message = event.message.text
-    if get_message=="圖片":
+    if get_message =="圖片":
         message =ImageSendMessage(
-        original_content_url = "http://wordpress.bestdaylong.com/wp-content/uploads/2019/07/玉免吃月餅.jpg"
-        ,preview_image_url = "http://wordpress.bestdaylong.com/wp-content/uploads/2019/07/玉免吃月餅.jpg" )
+        original_content_url = "https://autos.yahoo.com.tw/p/r/w880/car-trim/March2019/bfc5dfd3d0692287ac9946be100e5eeb.jpeg",
+        preview_image_url = "https://autos.yahoo.com.tw/p/r/w880/car-trim/March2019/bfc5dfd3d0692287ac9946be100e5eeb.jpeg"
+        )
     else:
         message = TextSendMessage(text=event.message.text)#回復訊息設定
 
