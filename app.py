@@ -39,6 +39,12 @@ def handle_message(event):
         original_content_url = "https://autos.yahoo.com.tw/p/r/w880/car-trim/March2019/bfc5dfd3d0692287ac9946be100e5eeb.jpeg",
         preview_image_url = "https://autos.yahoo.com.tw/p/r/w880/car-trim/March2019/bfc5dfd3d0692287ac9946be100e5eeb.jpeg"
         )
+    if get_message == "地點":
+        message = LocationSendMessage(
+        title = "高雄",
+        address = "高雄",
+        latitude = 22.747736,
+        longitude = 120.421516)   
     else:
         message = TextSendMessage(text=event.message.text)#回復訊息設定
 
