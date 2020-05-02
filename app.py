@@ -44,7 +44,12 @@ def handle_message(event):
         title = "高雄",
         address = "高雄",
         latitude = 22.747736,
-        longitude = 120.421516)   
+        longitude = 120.421516)
+    if get_message == "貼圖":
+        message = StickerSendMessage(
+            package_id= "1",
+            sticker_id="1"
+        )
     else:
         message = TextSendMessage(text=event.message.text)#回復訊息設定
 
