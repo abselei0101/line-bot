@@ -51,6 +51,28 @@ def handle_message(event):
             package_id= "1",
             sticker_id="1"
         )
+    if get_message == "按鈕":
+        message = TemplateSendMessage(
+            alt_text="Buttons template",
+            template=ButtonsTemplate(
+                thumbnail_image_url="https://images.samsung.com/is/image/samsung/tw-ru7300-ua65ru7300wxzw-lperspectiveblack-158145895?$PD_GALLERY_L_JPG$",
+            title = "電視",
+            text = "Please select",
+            actions = [PostbackTemplateAction(
+            labal = "postback",
+            text = "postback text",
+            data = "action = buy&itemid=1"),
+            MessageTemplateAction(
+                label="message",
+                text = "message text"
+            ),
+            URITemplateAction(
+                labal = "uri",
+                uri = "http://example.com"
+            )]
+            )
+            )
+
     else:
         message = TextSendMessage(text=event.message.text)#回復訊息設定
 
