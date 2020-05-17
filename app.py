@@ -53,17 +53,25 @@ def handle_message(event):
         )
     elif get_message == "按鈕":
         message = TemplateSendMessage(
-            alt_text="Buttons template",
-            template = ButtonsTemplate(
-            thumbnail_image_url="https://autos.yahoo.com.tw/p/r/w880/car-trim/March2019/bfc5dfd3d0692287ac9946be100e5eeb.jpeg",
-            title = "電視",
-            text = "Please select",
-            actions = [
-            PostbackTemplateAction(
-            labal = "postback",
-            text = "postback text",
-            data = ""
-                )
+            alt_text='Buttons template',
+            template=ButtonsTemplate(
+                thumbnail_image_url='https://img.hypesphere.com/2015-10-22-174039-60.jpg',
+                title='Menu',
+                text='Please select',
+                actions=[
+                    PostbackTemplateAction(
+                        label='postback',
+                        text='postback text',
+                        data='action=buy&itemid=1'
+                    ),
+                    MessageTemplateAction(
+                        label='message',
+                        text='message text'
+                    ),
+                    URITemplateAction(
+                        label='uri',
+                        uri='http://example.com/'
+                    )
                 ]
             )
         )
