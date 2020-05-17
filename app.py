@@ -55,10 +55,11 @@ def handle_message(event):
         message = TemplateSendMessage(
             alt_text="Buttons template",
             template=ButtonsTemplate(
-                thumbnail_image_url="https://images.samsung.com/is/image/samsung/tw-ru7300-ua65ru7300wxzw-lperspectiveblack-158145895?$PD_GALLERY_L_JPG$",
+                thumbnail_image_url="https://autos.yahoo.com.tw/p/r/w880/car-trim/March2019/bfc5dfd3d0692287ac9946be100e5eeb.jpeg",
             title = "電視",
             text = "Please select",
-            actions = [PostbackTemplateAction(
+            actions = [
+            PostbackTemplateAction(
             labal = "postback",
             text = "postback text",
             data = "action = buy&itemid=1"),
@@ -69,10 +70,10 @@ def handle_message(event):
             URITemplateAction(
                 labal = "uri",
                 uri = "http://example.com"
-            )]
             )
-            )
-
+            ]
+        )
+    )
     else:
         message = TextSendMessage(text=event.message.text)#回復訊息設定
 
