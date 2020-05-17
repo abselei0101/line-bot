@@ -62,21 +62,14 @@ def handle_message(event):
             PostbackTemplateAction(
             labal = "postback",
             text = "postback text",
-            data = "action = buy&itemid=1"),
-            MessageTemplateAction(
-                label="message",
-                text = "message text"
-            ),
-            URITemplateAction(
-                labal = "uri",
-                uri = "http://example.com"
+            data = ""
+                )
+                ]
             )
-            ]
         )
-    )
     else:
         message = TextSendMessage(text=event.message.text)#回復訊息設定
-        
+
     line_bot_api.reply_message(event.reply_token, message)#回復訊息
 
 import os
