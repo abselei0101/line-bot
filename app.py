@@ -75,6 +75,104 @@ def handle_message(event):
                 ]
             )
         )
+    elif get_message == "confirmtemplate":
+        message = TemplateSendMessage(
+            alt_text='Confirm template',
+            template=ConfirmTemplate(
+                text='Are you sure?',
+                actions=[
+                    PostbackTemplateAction(
+                        label='postback',
+                        text='postback text',
+                        data='data'
+                    ),
+                    MessageTemplateAction(
+                        label='message',
+                        text='message text'
+                    )
+                ]
+            )
+        )
+    elif get_message == "carouseltemplate":
+        message = TemplateSendMessage(
+            alt_text='Carousel template',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://www.smartm.com.tw/data/Images/ec/24/a5/4d/f6ff18b13a9728bea09279d.jpg',
+                        title='this is menu1',
+                        text='description1',
+                        actions=[
+                            PostbackTemplateAction(
+                                label='postback1',
+                                text='postback text1',
+                                data='action=buy&itemid=1'
+                            ),
+                            MessageTemplateAction(
+                                label='message1',
+                                text='message text1'
+                            ),
+                            URITemplateAction(
+                                label='uri1',
+                                uri='https://www.smartm.com.tw/article/31363834cea3'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://is1-ssl.mzstatic.com/image/thumb/Video111/v4/9d/8e/34/9d8e34e2-2327-3840-c184-bf4a125c5d37/pr_source.lsr/268x0w.png',
+                        title='this is menu2',
+                        text='description2',
+                        actions=[
+                            PostbackTemplateAction(
+                                label='postback2',
+                                text='postback text2',
+                                data='action=buy&itemid=2'
+                            ),
+                            MessageTemplateAction(
+                                label='message2',
+                                text='message text2'
+                            ),
+                            URITemplateAction(
+                                label='uri2',
+                                uri='https://itunes.apple.com/tw/movie/%E5%B0%8F%E5%B0%8F%E5%85%B5/id991371510'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+    elif get_message == "imagecarouseltemplate":
+        message = TemplateSendMessage(
+            alt_text='ImageCarousel template',
+            template=ImageCarouselTemplate(
+                columns=[
+                    ImageCarouselColumn(
+                        image_url='https://img.hypesphere.com/2015-10-22-174039-60.jpg',
+                        action=PostbackTemplateAction(
+                            label='postback1',
+                            text='postback text1',
+                            data='data'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://img.hypesphere.com/2015-10-22-174039-60.jpg',
+                        action=MessageTemplateAction(
+                            label='Message',
+                            text='Message text2',
+                        )
+                    )
+                    ,
+                    ImageCarouselColumn(
+                        image_url='https://img.hypesphere.com/2015-10-22-174039-60.jpg',
+                        action=URITemplateAction(
+                            label='uri',
+                            uri='http://example.com/'
+                        )
+                    )
+
+                ]
+            )
+        )
     else:
         message = TextSendMessage(text=event.message.text)#回復訊息設定
 
