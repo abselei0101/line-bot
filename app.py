@@ -40,22 +40,22 @@ def handle_message(event):
         original_content_url = "https://autos.yahoo.com.tw/p/r/w880/car-trim/March2019/bfc5dfd3d0692287ac9946be100e5eeb.jpeg",
         preview_image_url = "https://autos.yahoo.com.tw/p/r/w880/car-trim/March2019/bfc5dfd3d0692287ac9946be100e5eeb.jpeg"
         )
-    if get_message == "地點":
+    elif get_message == "地點":
         message = LocationSendMessage(
         title = "高雄",
         address = "高雄",
         latitude = 22.747736,
         longitude = 120.421516)
-    if get_message == "貼圖":
+    elif get_message == "貼圖":
         message = StickerSendMessage(
             package_id= "1",
             sticker_id="1"
         )
-    if get_message == "按鈕":
+    elif get_message == "按鈕":
         message = TemplateSendMessage(
             alt_text="Buttons template",
-            template=ButtonsTemplate(
-                thumbnail_image_url="https://autos.yahoo.com.tw/p/r/w880/car-trim/March2019/bfc5dfd3d0692287ac9946be100e5eeb.jpeg",
+            template = ButtonsTemplate(
+            thumbnail_image_url="https://autos.yahoo.com.tw/p/r/w880/car-trim/March2019/bfc5dfd3d0692287ac9946be100e5eeb.jpeg",
             title = "電視",
             text = "Please select",
             actions = [
@@ -76,7 +76,7 @@ def handle_message(event):
     )
     else:
         message = TextSendMessage(text=event.message.text)#回復訊息設定
-
+        
     line_bot_api.reply_message(event.reply_token, message)#回復訊息
 
 import os
