@@ -10,7 +10,7 @@ from linebot.models import *
 
 app = Flask(__name__)
 import os
-import Invoice
+from Invoice import Invoice
 # Channel Access Token
 line_bot_api = LineBotApi(os.environ["token"]) #填入Channel access token
 # Channel Secret
