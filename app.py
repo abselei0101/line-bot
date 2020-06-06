@@ -37,7 +37,7 @@ def handle_message(event):
     get_message = event.message.text
     if get_message =="發票對獎號碼":
         I = Invoice()
-        I.set_date(109,3)
+        I.set_date(3,109)
         n = I.get_number()
         text = ""
         for i in n:
